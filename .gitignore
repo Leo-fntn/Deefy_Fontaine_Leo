@@ -5,5 +5,5 @@ out/
 .class
 Thumbs.db
 pom.xml
-.ini
-.db.ini
+*.ini
+*.db.ini
