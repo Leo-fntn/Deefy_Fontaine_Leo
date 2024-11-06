@@ -131,6 +131,8 @@ class AddTrackAction extends Action{
             return "Le fichier doit être un mp3";
         }
 
+        $nomFichier = bin2hex(random_bytes(10)) . '.mp3';
+
         // Nettoyage et déplacement du fichier
         $nomFichier = $uploadDir . basename($nomFichier);
         $nomFichier = filter_var($nomFichier, FILTER_SANITIZE_STRING);

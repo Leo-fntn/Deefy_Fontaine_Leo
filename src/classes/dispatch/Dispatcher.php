@@ -75,19 +75,21 @@ class Dispatcher{
                 <!-- Left-aligned links -->
                 <div class="nav-left">
                     <li><a href='index.php?action=default'>Deefy</a></li>
-                    <li><a href='index.php?action=all-playlist'>Playlist</a></li>
-                    <li><a href='index.php?action=add-playlist'>Add Playlist</a></li>
-                    <li><a href='index.php?action=add-track'>Add Podcast Track</a></li>
+                    <li><a href='index.php?action=all-playlist'>Mes Playlists</a></li>
+                    <li><a href='index.php?action=add-playlist'>Nouvelle Playlist</a></li>
+                    <li><a href='index.php?action=add-track'>Ajouter un son</a></li>
                     <li><a href='index.php?action=display-playlist&id={$id}'>Afficher playlist actuelle</a></li>
                 </div>
                 
                 <!-- Right-aligned link -->
                 <div class="nav-right">
         FIN;
+                    // si il y a un utilisateur connecté, on affiche le lien de déconnexion
+                    // sinon on affiche le lien de connexion
                     if ($user){
-                        $final .= "<li><a href='index.php?action=sign-out'>Sign Out</a></li>";
+                        $final .= "<li><a href='index.php?action=sign-out'>Se déconnecter</a></li>";
                     } else {
-                        $final .= "<li><a href='index.php?action=sign-in'>Sign In</a></li>";
+                        $final .= "<li><a href='index.php?action=sign-in'>Se connecter</a></li>";
                     }
                     $final .= <<<FIN
                 </div>

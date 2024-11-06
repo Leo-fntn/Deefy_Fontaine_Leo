@@ -22,11 +22,6 @@ class DisplayAllPlaylistAction extends Action{
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-//        if (isset($_SESSION["playlist"])) {
-//            $playlist = $_SESSION["playlist"];
-//            $renderer = new AudioListRenderer($playlist);
-//            return $renderer->render(Renderer::long);
-//        }
         $r = DeefyRepository::getInstance();
         $playlists = $r->getPlaylistsByUser($user);
 
@@ -40,7 +35,6 @@ class DisplayAllPlaylistAction extends Action{
                 <h2>Toutes vos playlists (cliquez pour en choisir une)</h2>
                 FIN;
             foreach ($playlists as $pl) {
-                // pour chaque playlist, on fait un bloc cliquable qui affiche le titre, le nombre de pistes et la durée totale
                 $nbPistes = $pl->nbPistes;
                 $duree = $pl->duree;
                 $titre = $pl->titre;

@@ -1,0 +1,10 @@
+Liste des fonctionnalités réalisées lors du projet Deefy :
+
+- Création d'une playlist 
+- Affichage d'une playlist choisie au préalable
+- Création d'une piste audio et ajout dans une playlist
+- Connexion au site
+- Déconnexion du site
+- Création d'un nouveau compte utilisateur
+- Affichage de toutes les playlists d'un utilisateur
+- Gestion des autorisations pour chaque action

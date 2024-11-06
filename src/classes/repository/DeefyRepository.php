@@ -132,12 +132,10 @@ class DeefyRepository
     }
 
     public function insertUser(User $user) :User{
-//        $id = $this->pdo->lastInsertId();
         $mail = filter_var($user->email, FILTER_SANITIZE_EMAIL);
         $passwd = $user->password;
 
         $insertRequest = $this->pdo->prepare("INSERT INTO user (email, passwd) VALUES (?, ?)");
-//        $insertRequest->bindParam(1, $id);
         $insertRequest->bindParam(1, $mail);
         $insertRequest->bindParam(2, $passwd);
         $insertRequest->execute();
@@ -148,22 +146,6 @@ class DeefyRepository
 
         return $user;
 
-    }
-
-
-    public function allPlaylists() : array{
-        $request = $this->pdo->prepare("SELECT * FROM playlist");
-        $request->execute();
-        $playlists = [];
-        while ($pl = $request->fetch()) {
-            $id = $pl['id'];
-            $nom = $pl['nom'];
-            $pl = new Playlist($nom);
-            $pl->setId($id);
-
-            $playlists[] = $pl;
-        }
-        return $playlists;
     }
 
 

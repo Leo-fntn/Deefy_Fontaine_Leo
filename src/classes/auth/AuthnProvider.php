@@ -56,15 +56,4 @@ class AuthnProvider{
         unset($_SESSION['user']);
     }
 
-//    public function checkPasswordStrength(string $pass,
-//                                          int $minimumLength): bool {
-//
-//        $length = (strlen($pass) < $minimumLength); // longueur minimale
-//        $digit = preg_match("#[\d]#", $pass); // au moins un digit
-//        $special = preg_match("#[\W]#", $pass); // au moins un car. spécial
-//        $lower = preg_match("#[a-z]#", $pass); // au moins une minuscule
-//        $upper = preg_match("#[A-Z]#", $pass); // au moins une majuscule
-//        if (!$length || !$digit || !$special || !$lower || !$upper)return false;
-//        return true;
-//    }
 }
